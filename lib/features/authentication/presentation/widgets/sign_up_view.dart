@@ -40,6 +40,7 @@ class _SignUpViewState extends State<SignUpView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          
           32.8.toColumnSizedBox(),
           Form(
             key: _formKey,

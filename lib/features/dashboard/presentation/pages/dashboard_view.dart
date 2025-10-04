@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../../gen/assets.gen.dart';
-
+import '../../../home/presentation/pages/home_view.dart';
 
 class DashboardView extends StatefulWidget {
   int index;
@@ -11,7 +11,7 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
-  final screens = [Placeholder(), Placeholder(), Placeholder()];
+  final screens = [HomeView(), Placeholder(), Placeholder()];
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +32,9 @@ class _DashboardViewState extends State<DashboardView> {
           selectedFontSize: 12,
           unselectedFontSize: 12,
           currentIndex: widget.index,
-          onTap:
-              (index) => setState(() {
-                widget.index = index;
-              }),
+          onTap: (index) => setState(() {
+            widget.index = index;
+          }),
           items: [
             BottomNavigationBarItem(
               label: 'Home',
@@ -70,7 +69,6 @@ class _DashboardViewState extends State<DashboardView> {
                 child: Assets.icons.marketActive.svg(),
               ),
             ),
-           
           ],
         ),
       ),

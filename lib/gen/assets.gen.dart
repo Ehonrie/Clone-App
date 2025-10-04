@@ -26,6 +26,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/facebook.svg
   SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
 
+  /// File path: assets/icons/flash.svg
+  SvgGenImage get flash => const SvgGenImage('assets/icons/flash.svg');
+
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
 
@@ -35,6 +38,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home_inactive.svg
   SvgGenImage get homeInactive =>
       const SvgGenImage('assets/icons/home_inactive.svg');
+
+  /// File path: assets/icons/jamb.svg
+  SvgGenImage get jamb => const SvgGenImage('assets/icons/jamb.svg');
 
   /// File path: assets/icons/library.svg
   SvgGenImage get library => const SvgGenImage('assets/icons/library.svg');
@@ -54,26 +60,148 @@ class $AssetsIconsGen {
   SvgGenImage get obscureEye =>
       const SvgGenImage('assets/icons/obscure_eye.svg');
 
+  /// File path: assets/icons/pin.svg
+  SvgGenImage get pin => const SvgGenImage('assets/icons/pin.svg');
+
+  /// File path: assets/icons/record.svg
+  SvgGenImage get record => const SvgGenImage('assets/icons/record.svg');
+
+  /// File path: assets/icons/summary.svg
+  SvgGenImage get summary => const SvgGenImage('assets/icons/summary.svg');
+
+  /// File path: assets/icons/tutorial.svg
+  SvgGenImage get tutorial => const SvgGenImage('assets/icons/tutorial.svg');
+
+  /// File path: assets/icons/update.svg
+  SvgGenImage get update => const SvgGenImage('assets/icons/update.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
     eye,
     fab2,
     facebook,
+    flash,
     google,
     home,
     homeInactive,
+    jamb,
     library,
     libraryActive,
     market,
     marketActive,
     obscureEye,
+    pin,
+    record,
+    summary,
+    tutorial,
+    update,
   ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/slide_image.png
+  AssetGenImage get slideImage =>
+      const AssetGenImage('assets/images/slide_image.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [slideImage];
 }
 
 class Assets {
   const Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
+}
+
+class AssetGenImage {
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+    this.animation,
+  });
+
+  final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
+  final AssetGenImageAnimation? animation;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = true,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.medium,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class AssetGenImageAnimation {
+  const AssetGenImageAnimation({
+    required this.isAnimation,
+    required this.duration,
+    required this.frames,
+  });
+
+  final bool isAnimation;
+  final Duration duration;
+  final int frames;
 }
 
 class SvgGenImage {
