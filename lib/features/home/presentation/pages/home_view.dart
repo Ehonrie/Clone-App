@@ -1,12 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:clone_app/core/config/extention.dart';
+import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/color.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
-import '../widget/performance_widget.dart';
+import '../widget/past_question_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -74,18 +75,36 @@ class _HomeViewState extends State<HomeView> {
                     icon: Assets.icons.summary.svg(),
                     title: "Summary",
                     title1: "Note",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.summaryNoteRoute,
+                      );
+                    },
                   ),
                   QuickActions(
                     icon: Assets.icons.tutorial.svg(),
-                    title: "Post ",
-                    title1: "Tutorial",
-                    onTap: () {},
+                    title: "Past ",
+                    title1: "Questions",
+                    onTap: () => showModalBottomSheet(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(20),
+                        ),
+                      ),
+                      context: context,
+                      builder: (context) {
+                        return PastQuestionWidget();
+                      },
+                      backgroundColor: Colors.transparent,
+                      isScrollControlled: true,
+                      isDismissible: true,
+                    ),
                   ),
                   QuickActions(
                     icon: Assets.icons.jamb.svg(),
-                    title: "JAMB Past",
-                    title1: "Questions",
+                    title: "JAMB",
+                    title1: "Syllabus",
                     onTap: () {},
                   ),
                 ],
@@ -105,26 +124,23 @@ class _HomeViewState extends State<HomeView> {
                     icon: Assets.icons.record.svg(),
                     title: "Performance",
                     title1: "Records",
-                    onTap: () => showModalBottomSheet(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(20),
-                        ),
-                      ),
-                      context: context,
-                      builder: (context) {
-                        return PerformanceWidget();
-                      },
-                      backgroundColor: Colors.transparent,
-                      isScrollControlled: true,
-                      isDismissible: true,
-                    ),
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.performanceRecordRoute,
+                      );
+                    },
                   ),
                   QuickActions(
                     icon: Assets.icons.pin.svg(),
                     title: "Activate",
                     title1: "Course",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.activateAppRoute,
+                      );
+                    },
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:clone_app/core/theme/color.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../gen/assets.gen.dart';
 import '../../../home/presentation/pages/home_view.dart';
@@ -23,7 +24,8 @@ class _DashboardViewState extends State<DashboardView> {
           highlightColor: Colors.transparent,
         ),
         child: BottomNavigationBar(
-          backgroundColor: Colors.white,
+          selectedItemColor: AppColors.primary,
+          backgroundColor: AppColors.background,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,
@@ -44,29 +46,29 @@ class _DashboardViewState extends State<DashboardView> {
               ),
               activeIcon: Padding(
                 padding: const EdgeInsets.all(10),
-                child: Assets.icons.home.svg(),
+                child: Assets.icons.home.svg(color: AppColors.primary),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Library',
+              label: 'Novel',
               icon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Assets.icons.library.svg(),
               ),
               activeIcon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Assets.icons.libraryActive.svg(),
+                child: Assets.icons.libraryActive.svg(color: AppColors.primary),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Market',
+              label: 'Menu',
               icon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Assets.icons.market.svg(),
               ),
               activeIcon: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Assets.icons.marketActive.svg(),
+                child: Assets.icons.marketActive.svg(color: AppColors.primary),
               ),
             ),
           ],
