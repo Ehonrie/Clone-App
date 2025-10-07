@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../features/authentication/presentation/pages/authentication_view.dart';
+import '../../features/dashboard/presentation/pages/dashboard_view.dart';
 import '../../features/onboarding/presentation/pages/splash_view.dart';
 import 'manager.dart';
 
@@ -8,10 +10,15 @@ class RouteGenerator {
     switch (settings.name) {
       //onboarding
       case RoutesManager.splashRoute:
-        return MaterialPageRoute(builder: (_) => const SplashView());
+        return MaterialPageRoute(builder: (_) => const SplashView()); //
 
-     
-    
+      //authentication
+      case RoutesManager.authenticationRoute:
+        return MaterialPageRoute(builder: (_) => const AuthenticationView());
+
+      //authentication
+      case RoutesManager.dashboardRoute:
+        return MaterialPageRoute(builder: (_) => DashboardView());
 
       default:
         return unDefinedRoute();

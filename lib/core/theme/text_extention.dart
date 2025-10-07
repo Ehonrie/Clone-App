@@ -18,4 +18,37 @@ extension CustomTextStyles on TextTheme {
     fontWeight: FontWeight.w400,
     color: AppColors.text,
   );
+
+  TextStyle get myBodyStyle3 => TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
+
+  TextStyle get myTitleStyle => TextStyle(
+    fontSize: 60.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.text,
+  );
+
+  TextStyle get myTitleStyle1 => TextStyle(
+    fontSize: 32.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
+  );
+
+  TextStyle get myTitleStyle2 => TextStyle(
+    fontSize: 15.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
+  );
+
+  TextStyle get myTitleStyle3 =>
+      TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700);
+
+  TextStyle get myTitleStyle4 => TextStyle(
+    fontSize: 18.sp,
+    // color: Colors.white,
+    fontWeight: FontWeight.w700,
+  );
 }
