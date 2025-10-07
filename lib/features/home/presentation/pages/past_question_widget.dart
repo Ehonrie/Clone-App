@@ -1,4 +1,5 @@
 import 'package:clone_app/core/config/extention.dart';
+import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:clone_app/features/home/presentation/pages/home_view.dart';
 import 'package:flutter/material.dart';
@@ -44,32 +45,38 @@ class _PastQuestionWidgetState extends State<PastQuestionWidget> {
                     ),
                   ),
                   20.toColumnSizedBox(),
-                  Container(
-                    padding: EdgeInsets.all(17.sp),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.r),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      RoutesManager.studyModeRoute,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        LfxStamp(),
-                        10.toRowSizedBox(),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "STUDY MODE",
-                              style: Theme.of(context).textTheme.myTitleStyle2
-                                  .copyWith(color: Colors.black),
-                            ),
-                            Text(
-                              "Study older past questions",
-                              style: Theme.of(context).textTheme.myBodyStyle2,
-                            ),
-                          ],
-                        ),
-                      ],
+                    child: Container(
+                      padding: EdgeInsets.all(17.sp),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          LfxStamp(),
+                          10.toRowSizedBox(),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "STUDY MODE",
+                                style: Theme.of(context).textTheme.myTitleStyle2
+                                    .copyWith(color: Colors.black),
+                              ),
+                              Text(
+                                "Study older past questions",
+                                style: Theme.of(context).textTheme.myBodyStyle2,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   15.toColumnSizedBox(),

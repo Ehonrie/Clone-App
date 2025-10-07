@@ -5,8 +5,7 @@ import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../pages/home_view.dart';
-// import 'home_view.dart';
+import 'home_view.dart';
 
 class PerformanceWidget extends StatefulWidget {
   const PerformanceWidget({super.key});

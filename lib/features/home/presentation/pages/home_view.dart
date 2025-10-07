@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
-import '../widget/past_question_widget.dart';
+import 'past_question_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -105,7 +105,12 @@ class _HomeViewState extends State<HomeView> {
                     icon: Assets.icons.jamb.svg(),
                     title: "JAMB",
                     title1: "Syllabus",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.jambSyllabusRoute,
+                      );
+                    },
                   ),
                 ],
               ),
@@ -118,7 +123,12 @@ class _HomeViewState extends State<HomeView> {
                     color: Colors.redAccent,
                     title: "Flash",
                     title1: "Cards",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.flashCardRoute,
+                      );
+                    },
                   ),
                   QuickActions(
                     icon: Assets.icons.record.svg(),

@@ -35,19 +35,22 @@ class _SummaryNoteViewState extends State<SummaryNoteView> {
               style: Theme.of(context).textTheme.myBodyStyle,
             ),
             27.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(logo: "E", title: "ENGLISH LANGUAGE"),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(logo: "M", title: "MATHEMATICS"),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(logo: "C", title: "CHEMISTRY"),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(logo: "B", title: "BIOLOGY"),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(logo: "P", title: "PHYSICS"),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(logo: "A", title: "AGRICULTURAL SCIENCE"),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH"),
+            SubjectPreference(
+              logo: "C",
+              title: "CHRISTIAN RELIGIOUS KNOWLEDGE",
+            ),
           ],
         ),
       ),
@@ -57,7 +60,9 @@ class _SummaryNoteViewState extends State<SummaryNoteView> {
 
 class SubjectPreference extends StatelessWidget {
   final String logo, title;
-  const SubjectPreference({super.key, required this.logo, required this.title});
+  final Widget? icon;
+  final bool isSelected;
+  const SubjectPreference({super.key, required this.logo, required this.title, this.icon, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
@@ -101,10 +106,12 @@ class SubjectPreference extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.myTitleStyle3.copyWith(color: Colors.black),
+                  overflow: TextOverflow.ellipsis, // 👈 adds "..."
+                  maxLines: 1, // 👈 keeps it to one line
+                  softWrap: false,
+                  style: Theme.of(context).textTheme.myTitleStyle4,
                 ),
+                icon ??
                 Icon(
                   Icons.arrow_forward_ios_outlined,
                   size: 20.sp,
