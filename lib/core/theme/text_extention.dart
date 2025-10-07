@@ -25,6 +25,12 @@ extension CustomTextStyles on TextTheme {
     color: AppColors.white,
   );
 
+  TextStyle get myBodyStyle4 => TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.text,
+  );
+
   TextStyle get myTitleStyle => TextStyle(
     fontSize: 60.sp,
     fontWeight: FontWeight.w700,

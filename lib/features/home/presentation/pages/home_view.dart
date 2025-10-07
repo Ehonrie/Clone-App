@@ -1,11 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:clone_app/core/config/extention.dart';
+import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/color.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../gen/assets.gen.dart';
+import 'past_question_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -73,16 +75,42 @@ class _HomeViewState extends State<HomeView> {
                     icon: Assets.icons.summary.svg(),
                     title: "Summary",
                     title1: "Note",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.summaryNoteRoute,
+                      );
+                    },
                   ),
                   QuickActions(
                     icon: Assets.icons.tutorial.svg(),
-                    title: "Post ",
-                    title1: "Tutorial",
+                    title: "Past ",
+                    title1: "Questions",
+                    onTap: () => showModalBottomSheet(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(20),
+                        ),
+                      ),
+                      context: context,
+                      builder: (context) {
+                        return PastQuestionWidget();
+                      },
+                      backgroundColor: Colors.transparent,
+                      isScrollControlled: true,
+                      isDismissible: true,
+                    ),
                   ),
                   QuickActions(
                     icon: Assets.icons.jamb.svg(),
-                    title: "JAMB Past",
-                    title1: "Questions",
+                    title: "JAMB",
+                    title1: "Syllabus",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.jambSyllabusRoute,
+                      );
+                    },
                   ),
                 ],
               ),
@@ -92,18 +120,37 @@ class _HomeViewState extends State<HomeView> {
                 children: [
                   QuickActions(
                     icon: Assets.icons.flash.svg(),
+                    color: Colors.redAccent,
                     title: "Flash",
                     title1: "Cards",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.flashCardRoute,
+                      );
+                    },
                   ),
                   QuickActions(
                     icon: Assets.icons.record.svg(),
                     title: "Performance",
                     title1: "Records",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.performanceRecordRoute,
+                      );
+                    },
                   ),
                   QuickActions(
                     icon: Assets.icons.pin.svg(),
                     title: "Activate",
                     title1: "Course",
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutesManager.activateAppRoute,
+                      );
+                    },
                   ),
                 ],
               ),
@@ -288,54 +335,61 @@ class LfxStamp extends StatelessWidget {
 }
 
 class QuickActions extends StatelessWidget {
+  final VoidCallback onTap;
   final String title;
   final String title1;
   final Widget icon;
+  final Color? color;
   const QuickActions({
     super.key,
     required this.title,
     required this.icon,
     required this.title1,
+    this.color,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16.sp),
-      width: 125.w,
-      height: 150.h,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: .1),
-            blurRadius: 1.0.r,
-            offset: Offset(1, 1),
-            spreadRadius: 0.5.r,
-          ),
-        ],
-        color: AppColors.primary,
-        borderRadius: BorderRadius.circular(15.r),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          17.toColumnSizedBox(),
-          icon,
-          14.toColumnSizedBox(),
-          Text(
-            title,
-            style: Theme.of(
-              context,
-            ).textTheme.myBodyStyle2.copyWith(color: Colors.white),
-          ),
-          14.toColumnSizedBox(),
-          Text(
-            title1,
-            style: Theme.of(
-              context,
-            ).textTheme.myBodyStyle2.copyWith(color: Colors.white),
-          ),
-        ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(16.sp),
+        width: 125.w,
+        height: 150.h,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: .1),
+              blurRadius: 1.0.r,
+              offset: Offset(1, 1),
+              spreadRadius: 0.5.r,
+            ),
+          ],
+          color: color ?? AppColors.primary,
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            17.toColumnSizedBox(),
+            icon,
+            14.toColumnSizedBox(),
+            Text(
+              title,
+              style: Theme.of(
+                context,
+              ).textTheme.myBodyStyle.copyWith(color: Colors.white),
+            ),
+            10.toColumnSizedBox(),
+            Text(
+              title1,
+              style: Theme.of(
+                context,
+              ).textTheme.myBodyStyle.copyWith(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }

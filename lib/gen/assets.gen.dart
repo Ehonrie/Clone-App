@@ -101,12 +101,16 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/lock_icon.png
+  AssetGenImage get lockIcon =>
+      const AssetGenImage('assets/images/lock_icon.png');
+
   /// File path: assets/images/slide_image.png
   AssetGenImage get slideImage =>
       const AssetGenImage('assets/images/slide_image.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [slideImage];
+  List<AssetGenImage> get values => [lockIcon, slideImage];
 }
 
 class Assets {
