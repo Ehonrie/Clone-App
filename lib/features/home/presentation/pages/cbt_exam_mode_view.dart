@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/color.dart';
-import '../widget/past_question_option_view.dart';
+import '../widget/cbt_past_question_view.dart';
 import 'summary_note_view.dart';
 
-class StudyModeView extends StatefulWidget {
-  const StudyModeView({super.key});
+class CbtExamModeView extends StatefulWidget {
+  const CbtExamModeView({super.key});
 
   @override
-  State<StudyModeView> createState() => _StudyModeViewState();
+  State<CbtExamModeView> createState() => _CbtExamModeViewState();
 }
 
-class _StudyModeViewState extends State<StudyModeView> {
+class _CbtExamModeViewState extends State<CbtExamModeView> {
   final Set<String> selectedSubjects = {};
 
   final List<Map<String, String>> subjects = [
@@ -49,13 +49,13 @@ class _StudyModeViewState extends State<StudyModeView> {
           children: [
             15.toColumnSizedBox(),
             Text(
-              "PAST QUESTION",
+              "EXAMINE YOURSELF",
               style: Theme.of(
                 context,
               ).textTheme.myTitleStyle1.copyWith(color: Colors.black),
             ),
             Text(
-              "SELECT ANY SUBJECT YOU WISH TO STUDY",
+              "SELECT A SUBJECT YOU WISH TO STUDY",
               style: Theme.of(context).textTheme.myBodyStyle,
             ),
             27.toColumnSizedBox(),
@@ -100,7 +100,7 @@ class _StudyModeViewState extends State<StudyModeView> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => PastQuestionOptionView(
+                    builder: (_) => CbtPastQuestionView(
                       selectedSubjects: selectedSubjects.toList(),
                     ),
                   ),

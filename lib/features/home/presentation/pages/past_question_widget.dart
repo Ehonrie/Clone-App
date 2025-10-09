@@ -80,32 +80,38 @@ class _PastQuestionWidgetState extends State<PastQuestionWidget> {
                     ),
                   ),
                   15.toColumnSizedBox(),
-                  Container(
-                    padding: EdgeInsets.all(17.sp),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.r),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      RoutesManager.cbtExamRoute,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        LfxStamp(),
-                        10.toRowSizedBox(),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "CBT/EXAM MODE",
-                              style: Theme.of(context).textTheme.myTitleStyle2
-                                  .copyWith(color: Colors.black),
-                            ),
-                            Text(
-                              "Test yourself with real exam situations",
-                              style: Theme.of(context).textTheme.myBodyStyle2,
-                            ),
-                          ],
-                        ),
-                      ],
+                    child: Container(
+                      padding: EdgeInsets.all(17.sp),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          LfxStamp(),
+                          10.toRowSizedBox(),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "CBT/EXAM MODE",
+                                style: Theme.of(context).textTheme.myTitleStyle2
+                                    .copyWith(color: Colors.black),
+                              ),
+                              Text(
+                                "Test yourself with real exam situations",
+                                style: Theme.of(context).textTheme.myBodyStyle2,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
