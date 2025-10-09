@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../features/authentication/presentation/pages/authentication_view.dart';
 import '../../features/dashboard/presentation/pages/dashboard_view.dart';
 import '../../features/home/presentation/pages/activate_app_view.dart';
+import '../../features/home/presentation/pages/cbt_exam_mode_view.dart';
 import '../../features/home/presentation/pages/flash_card_view.dart';
 import '../../features/home/presentation/pages/jamb_syllabus_view.dart';
 import '../../features/home/presentation/pages/performance_details_view.dart';
@@ -46,8 +47,11 @@ class RouteGenerator {
       case RoutesManager.flashCardRoute:
         return MaterialPageRoute(builder: (_) => FlashCardView());
 
-         case RoutesManager.studyModeRoute:
+      case RoutesManager.studyModeRoute:
         return MaterialPageRoute(builder: (_) => StudyModeView());
+
+      case RoutesManager.cbtExamRoute:
+        return MaterialPageRoute(builder: (_) => CbtExamModeView());
 
       default:
         return unDefinedRoute();
