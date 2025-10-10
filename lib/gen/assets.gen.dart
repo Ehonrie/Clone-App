@@ -101,6 +101,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/empty_box.png
+  AssetGenImage get emptyBox =>
+      const AssetGenImage('assets/images/empty_box.png');
+
   /// File path: assets/images/lock_icon.png
   AssetGenImage get lockIcon =>
       const AssetGenImage('assets/images/lock_icon.png');
@@ -110,7 +114,7 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/slide_image.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [lockIcon, slideImage];
+  List<AssetGenImage> get values => [emptyBox, lockIcon, slideImage];
 }
 
 class Assets {

@@ -34,7 +34,12 @@ class _CbtPastQuestionViewState extends State<CbtPastQuestionView> {
       backgroundColor: AppColors.background,
       appBar: AppBar(),
       body: Container(
-        padding: EdgeInsets.all(16.sp),
+        padding: EdgeInsets.only(
+          top: 16.h,
+          left: 16.w,
+          right: 16.w,
+          bottom: 70.h,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

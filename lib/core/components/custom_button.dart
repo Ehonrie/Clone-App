@@ -56,7 +56,7 @@ class CustomButton extends StatelessWidget {
                   spreadRadius: 1.0.r,
                 ),
               ],
-              borderRadius: borderRadius ?? BorderRadius.circular(15.r),
+              borderRadius: borderRadius ?? BorderRadius.circular(10.r),
               color: AppColors.primary,
 
               // gradient: LinearGradient(

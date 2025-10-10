@@ -10,6 +10,11 @@ import '../../features/home/presentation/pages/performance_details_view.dart';
 import '../../features/home/presentation/pages/performance_widget.dart';
 import '../../features/home/presentation/pages/study_mode_view.dart';
 import '../../features/home/presentation/pages/summary_note_view.dart';
+import '../../features/menu/presentation/pages/bookmarked_view.dart';
+import '../../features/menu/presentation/pages/edit_profile_view.dart';
+import '../../features/menu/presentation/pages/general_information_view.dart';
+import '../../features/menu/presentation/pages/reset_password_view.dart';
+import '../../features/menu/presentation/pages/special_information_view.dart';
 import '../../features/onboarding/presentation/pages/splash_view.dart';
 import 'manager.dart';
 
@@ -52,6 +57,22 @@ class RouteGenerator {
 
       case RoutesManager.cbtExamRoute:
         return MaterialPageRoute(builder: (_) => CbtExamModeView());
+
+      //menu
+      case RoutesManager.resetPasswordRoute:
+        return MaterialPageRoute(builder: (_) => ResetPasswordView());
+
+      case RoutesManager.editProfileRoute:
+        return MaterialPageRoute(builder: (_) => EditProfileView());
+
+      case RoutesManager.generalInfoRoute:
+        return MaterialPageRoute(builder: (_) => GeneralInformationView());
+
+      case RoutesManager.specialInfoRoute:
+        return MaterialPageRoute(builder: (_) => SpecialInformationView());
+
+      case RoutesManager.bookmarkedRoute:
+        return MaterialPageRoute(builder: (_) => BookmarkedView());
 
       default:
         return unDefinedRoute();
