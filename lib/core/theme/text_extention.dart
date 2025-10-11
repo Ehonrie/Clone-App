@@ -57,4 +57,10 @@ extension CustomTextStyles on TextTheme {
     // color: Colors.white,
     fontWeight: FontWeight.w700,
   );
+
+  TextStyle get myTitleStyle5 => TextStyle(
+    fontSize: 16.sp,
+    // color: Colors.white,
+    fontWeight: FontWeight.w700,
+  );
 }

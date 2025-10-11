@@ -24,4 +24,6 @@ class RoutesManager {
   static const String generalInfoRoute = "/generalInfoRoute";
   static const String specialInfoRoute = "/specialInfoRoute";
   static const String bookmarkedRoute = "/bookmarkedRoute";
+  static const String settingRoute = "/settingRoute";
+  static const String aboutRoute = "/aboutRoute";
 }

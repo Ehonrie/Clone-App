@@ -2,8 +2,11 @@ import 'package:clone_app/core/config/extention.dart';
 import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/color.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
+import 'package:clone_app/features/menu/presentation/pages/logout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'delete_account_view.dart';
 
 class MenuView extends StatefulWidget {
   const MenuView({super.key});
@@ -89,26 +92,46 @@ class _MenuViewState extends State<MenuView> {
               ProfileTabs(
                 image: Icons.settings,
                 title: "Setting",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesManager.settingRoute);
+                },
               ),
               10.toColumnSizedBox(),
               ProfileTabs(
                 image: Icons.info_outline,
                 title: "About Us",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesManager.aboutRoute);
+                },
               ),
               10.toColumnSizedBox(),
               ProfileTabs(
                 image: Icons.logout_outlined,
                 title: "Logout",
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    barrierColor: Colors.black.withValues(alpha: .4),
+                    builder: (context) {
+                      return LogoutView();
+                    },
+                  );
+                },
               ),
               10.toColumnSizedBox(),
               ProfileTabs(
                 image: Icons.delete_outline,
                 color: Colors.red,
                 title: "Delete Account",
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    barrierColor: Colors.black.withValues(alpha: .4),
+                    builder: (context) {
+                      return DeleteAccountView();
+                    },
+                  );
+                },
               ),
               10.toColumnSizedBox(),
             ],
