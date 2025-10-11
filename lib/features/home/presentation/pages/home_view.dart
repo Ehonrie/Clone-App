@@ -229,17 +229,23 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               12.toColumnSizedBox(),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 15.h),
-                width: 120.w,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(10.r),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  RoutesManager.generalInfoRoute,
                 ),
-                child: Center(
-                  child: Text(
-                    "View More",
-                    style: Theme.of(context).textTheme.myBodyStyle3,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 15.h),
+                  width: 120.w,
+                  decoration: BoxDecoration(
+                    color: AppColors.primary,
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "View More",
+                      style: Theme.of(context).textTheme.myBodyStyle3,
+                    ),
                   ),
                 ),
               ),
@@ -268,7 +274,15 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [GeneralInfo()],
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        RoutesManager.specialInfoRoute,
+                      ),
+                      child: GeneralInfo(),
+                    ),
+                  ],
                 ),
               ),
             ],

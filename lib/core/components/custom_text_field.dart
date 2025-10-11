@@ -5,7 +5,6 @@ import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../theme/color.dart';
 
 // import '../colors.dart';
@@ -24,7 +23,7 @@ class CustomTextField extends StatefulWidget {
   final FocusNode? focusNode;
   final Widget? suffixIcon;
   final bool? filled;
-   final int maxLines;
+  final int maxLines;
   final bool isPassword;
   final bool obscureText;
 
@@ -75,11 +74,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
         widget.space != null
             ? SizedBox.shrink()
             : Text(
-              widget.label ?? "",
-              style: Theme.of(
-                context,
-              ).textTheme.myBodyStyle1.copyWith(color: AppColors.grey),
-            ),
+                widget.label ?? "",
+                style: Theme.of(
+                  context,
+                ).textTheme.myBodyStyle1.copyWith(color: AppColors.grey),
+              ),
         4.toColumnSizedBox(),
         TextFormField(
           maxLines: widget.maxLines,
@@ -98,8 +97,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
               context,
             ).textTheme.myBodyStyle1.copyWith(color: AppColors.text),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.r),
-              borderSide: BorderSide(width: 0.5, color: AppColors.divider),
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(width: 0.5, color: AppColors.text),
             ),
             filled: widget.filled ?? true,
             fillColor: widget.fillColor ?? Color(0xFFF7F7F7),
@@ -108,7 +107,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             suffixIcon: widget.suffixIcon,
 
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.r),
+              borderRadius: BorderRadius.circular(10.r),
               borderSide: widget.borderSide ?? BorderSide.none,
             ),
             contentPadding: EdgeInsets.symmetric(

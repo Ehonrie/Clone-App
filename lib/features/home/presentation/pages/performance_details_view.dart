@@ -130,7 +130,7 @@ class _PerformanceDetailsViewState extends State<PerformanceDetailsView> {
                   Divider(),
                   SubjectDetails(
                     title: "Total Un-Attempted Questions",
-                    value: "Mathematics",
+                    value: "0",
                   ),
                   Divider(),
                   SubjectDetails(title: "Total Correct", value: "35"),

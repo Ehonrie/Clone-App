@@ -2,6 +2,7 @@ import 'package:clone_app/core/theme/color.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../gen/assets.gen.dart';
 import '../../../home/presentation/pages/home_view.dart';
+import '../../../menu/presentation/pages/menu_view.dart';
 import '../../../novel/presentation/pages/novel_view.dart';
 
 class DashboardView extends StatefulWidget {
@@ -13,7 +14,7 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
-  final screens = [HomeView(), NovelView(), Placeholder()];
+  final screens = [HomeView(), NovelView(), MenuView()];
 
   @override
   Widget build(BuildContext context) {

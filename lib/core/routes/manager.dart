@@ -17,4 +17,13 @@ class RoutesManager {
   static const String flashCardRoute = "/flashCardRoute";
   static const String studyModeRoute = "/studyModeRoute";
   static const String cbtExamRoute = "/cbtExamRoute";
+
+  //menu
+  static const String resetPasswordRoute = "/resetPasswordRoute";
+  static const String editProfileRoute = "/editProfileRoute";
+  static const String generalInfoRoute = "/generalInfoRoute";
+  static const String specialInfoRoute = "/specialInfoRoute";
+  static const String bookmarkedRoute = "/bookmarkedRoute";
+  static const String settingRoute = "/settingRoute";
+  static const String aboutRoute = "/aboutRoute";
 }
