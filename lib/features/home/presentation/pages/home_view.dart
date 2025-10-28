@@ -368,7 +368,7 @@ class QuickActions extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(16.sp),
+        padding: EdgeInsets.all(12.sp),
         width: 125.w,
         height: 150.h,
         decoration: BoxDecoration(

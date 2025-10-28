@@ -68,21 +68,19 @@ class _StudyModeViewState extends State<StudyModeView> {
                     );
                     return Padding(
                       padding: EdgeInsets.only(bottom: 8.h),
-                      child: GestureDetector(
-                        onTap: () => toggleSelection(subject['title']!),
-                        child: SubjectPreference(
-                          logo: subject['logo']!,
-                          title: subject['title']!,
-                          icon: Icon(
-                            isSelected
-                                ? Icons.check_box_rounded
-                                : Icons.download_rounded,
-                            color: isSelected
-                                ? AppColors.primary
-                                : AppColors.text,
-                          ),
-                          isSelected: isSelected,
+                      child: SubjectPreference(
+                        logo: subject['logo']!,
+                        title: subject['title']!,
+                        icon: Icon(
+                          isSelected
+                              ? Icons.check_box_rounded
+                              : Icons.download_rounded,
+                          color: isSelected
+                              ? AppColors.primary
+                              : AppColors.text,
                         ),
+                        isSelected: isSelected,
+                        onTap: () => toggleSelection(subject['title']!),
                       ),
                     );
                   }).toList(),
@@ -96,7 +94,6 @@ class _StudyModeViewState extends State<StudyModeView> {
         onTap: selectedSubjects.isEmpty
             ? null
             : () {
-                // 👇 navigate when a subject is selected
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -106,12 +103,12 @@ class _StudyModeViewState extends State<StudyModeView> {
                   ),
                 );
               },
-        // : null, // 👈 disables when no selection
+
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20), // rounded card style
+            borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
                 color: Colors.black26,
@@ -128,11 +125,11 @@ class _StudyModeViewState extends State<StudyModeView> {
             decoration: BoxDecoration(
               color: selectedSubjects.isNotEmpty
                   ? AppColors.primary
-                  : Colors.grey.shade400, // 👈 disabled color
+                  : Colors.grey.shade400,
               borderRadius: BorderRadius.circular(15.r),
             ),
             child: Center(
-              child: Text("Procced", style: TextStyle(color: Colors.white)),
+              child: Text("Proceed", style: TextStyle(color: Colors.white)),
             ),
           ),
         ),

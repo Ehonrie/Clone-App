@@ -68,21 +68,19 @@ class _CbtExamModeViewState extends State<CbtExamModeView> {
                     );
                     return Padding(
                       padding: EdgeInsets.only(bottom: 8.h),
-                      child: GestureDetector(
-                        onTap: () => toggleSelection(subject['title']!),
-                        child: SubjectPreference(
-                          logo: subject['logo']!,
-                          title: subject['title']!,
-                          icon: Icon(
-                            isSelected
-                                ? Icons.check_box_rounded
-                                : Icons.download_rounded,
-                            color: isSelected
-                                ? AppColors.primary
-                                : AppColors.text,
-                          ),
-                          isSelected: isSelected,
+                      child: SubjectPreference(
+                        logo: subject['logo']!,
+                        title: subject['title']!,
+                        icon: Icon(
+                          isSelected
+                              ? Icons.check_box_rounded
+                              : Icons.download_rounded,
+                          color: isSelected
+                              ? AppColors.primary
+                              : AppColors.text,
                         ),
+                        isSelected: isSelected,
+                        onTap: () => toggleSelection(subject['title']!),
                       ),
                     );
                   }).toList(),

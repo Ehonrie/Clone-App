@@ -17,6 +17,8 @@ class RoutesManager {
   static const String flashCardRoute = "/flashCardRoute";
   static const String studyModeRoute = "/studyModeRoute";
   static const String cbtExamRoute = "/cbtExamRoute";
+  static const String syllabusRoute = "/syllabusRoute";
+  static const String noteRoute = "/noteRoute";
 
   //menu
   static const String resetPasswordRoute = "/resetPasswordRoute";

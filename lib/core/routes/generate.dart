@@ -17,6 +17,7 @@ import '../../features/menu/presentation/pages/general_information_view.dart';
 import '../../features/menu/presentation/pages/reset_password_view.dart';
 import '../../features/menu/presentation/pages/setting_view.dart';
 import '../../features/menu/presentation/pages/special_information_view.dart';
+import '../../features/menu/presentation/widgets/note_widget.dart';
 import '../../features/onboarding/presentation/pages/splash_view.dart';
 import 'manager.dart';
 
@@ -59,6 +60,9 @@ class RouteGenerator {
 
       case RoutesManager.cbtExamRoute:
         return MaterialPageRoute(builder: (_) => CbtExamModeView());
+
+      case RoutesManager.noteRoute:
+        return MaterialPageRoute(builder: (_) => NoteWidget());
 
       //menu
       case RoutesManager.resetPasswordRoute:

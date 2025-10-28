@@ -198,7 +198,7 @@ class PerformanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
       width: 195.w,
       height: 120.h,
       decoration: BoxDecoration(
@@ -225,6 +225,9 @@ class PerformanceCard extends StatelessWidget {
           5.toColumnSizedBox(),
           Text(
             caption,
+            overflow: TextOverflow.ellipsis, // 👈 adds "..."
+            maxLines: 1, // 👈 keeps it to one line
+            softWrap: false,
             style: Theme.of(
               context,
             ).textTheme.myBodyStyle.copyWith(color: AppColors.text),

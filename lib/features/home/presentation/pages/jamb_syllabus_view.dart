@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/color.dart';
+import '../../../menu/presentation/pages/syllabus_detail_view.dart';
 import 'summary_note_view.dart';
 
 class JambSyllabusView extends StatefulWidget {
@@ -36,21 +37,101 @@ class _JambSyllabusViewState extends State<JambSyllabusView> {
               style: Theme.of(context).textTheme.myBodyStyle,
             ),
             27.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH LANGUAGE"),
+            SubjectPreference(
+              logo: "E",
+              title: "ENGLISH LANGUAGE",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SyllabusDetailView(title: 'ENGLISH LANGUAGE'),
+                  ),
+                );
+              },
+            ),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "M", title: "MATHEMATICS"),
+            SubjectPreference(
+              logo: "M",
+              title: "MATHEMATICS",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SyllabusDetailView(title: 'MATHEMATICS'),
+                  ),
+                );
+              },
+            ),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "C", title: "CHEMISTRY"),
+            SubjectPreference(
+              logo: "C",
+              title: "CHEMISTRY",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SyllabusDetailView(title: 'CHEMISTRY'),
+                  ),
+                );
+              },
+            ),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "B", title: "BIOLOGY"),
+            SubjectPreference(
+              logo: "B",
+              title: "BIOLOGY",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SyllabusDetailView(title: 'BIOLOGY'),
+                  ),
+                );
+              },
+            ),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "P", title: "PHYSICS"),
+            SubjectPreference(
+              logo: "P",
+              title: "PHYSICS",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SyllabusDetailView(title: 'PHYSICS'),
+                  ),
+                );
+              },
+            ),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "A", title: "AGRICULTURAL SCIENCE"),
+            SubjectPreference(
+              logo: "A",
+              title: "AGRICULTURAL SCIENCE",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SyllabusDetailView(title: 'AGRICULTURAL SCIENCE'),
+                  ),
+                );
+              },
+            ),
             5.toColumnSizedBox(),
             SubjectPreference(
               logo: "C",
               title: "CHRISTIAN RELIGIOUS KNOWLEDGE",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SyllabusDetailView(
+                      title: 'CHRISTIAN RELIGIOUS KNOWLEDGE',
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),
