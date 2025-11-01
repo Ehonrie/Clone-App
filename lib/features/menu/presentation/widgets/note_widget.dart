@@ -176,7 +176,7 @@ class _NoteWidgetState extends State<NoteWidget> {
                   "\n• You need to develop the prowess to discover/identify the meanings of phrases or words by reading the passage multiple times.\n• You must learn to spell your words correctly and your grammar must be error-free too.\n"
                   "Second Page\n",
                   // "last page",
-                  style: Theme.of(context).textTheme.myBodyStyle,
+                  style: Theme.of(context).textTheme.myBodyStyle, 
                 ),
               ] else ...[
                 Text(

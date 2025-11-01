@@ -1,4 +1,5 @@
 import 'package:clone_app/core/config/extention.dart';
+import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/color.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
@@ -270,64 +271,67 @@ class JambNovels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 150.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 4.r,
-            offset: Offset(1, 1),
-            spreadRadius: 0.5.r,
-          ),
-        ],
-        borderRadius: BorderRadius.circular(10.r),
-        color: Colors.white,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 150.w,
-            height: 140.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
-              color: AppColors.primary,
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, RoutesManager.novelRoute),
+      child: Container(
+        width: 150.w,
+        height: 200.h,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 4.r,
+              offset: Offset(1, 1),
+              spreadRadius: 0.5.r,
             ),
-            child: Center(
-              child: Text(
-                "Novel\nImage",
-                textAlign: TextAlign.center,
-                style: Theme.of(
-                  context,
-                ).textTheme.myTitleStyle4.copyWith(color: Colors.white),
+          ],
+          borderRadius: BorderRadius.circular(10.r),
+          color: Colors.white,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 150.w,
+              height: 140.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
+                color: AppColors.primary,
+              ),
+              child: Center(
+                child: Text(
+                  "Novel\nImage",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.myTitleStyle4.copyWith(color: Colors.white),
+                ),
               ),
             ),
-          ),
-          5.toColumnSizedBox(),
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Book Title",
-                  style: Theme.of(
-                    context,
-                  ).textTheme.myTitleStyle2.copyWith(color: Colors.black),
-                ),
-                5.toColumnSizedBox(),
-                Text(
-                  "Authors Name",
-                  style: Theme.of(
-                    context,
-                  ).textTheme.myBodyStyle4.copyWith(color: Colors.black),
-                ),
-              ],
+            5.toColumnSizedBox(),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Book Title",
+                    style: Theme.of(
+                      context,
+                    ).textTheme.myTitleStyle2.copyWith(color: Colors.black),
+                  ),
+                  5.toColumnSizedBox(),
+                  Text(
+                    "Authors Name",
+                    style: Theme.of(
+                      context,
+                    ).textTheme.myBodyStyle4.copyWith(color: Colors.black),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

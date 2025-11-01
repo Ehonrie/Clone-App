@@ -31,6 +31,9 @@ extension CustomTextStyles on TextTheme {
     color: AppColors.text,
   );
 
+   TextStyle get myBodyStyle5 =>
+      TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w400);
+
   TextStyle get myTitleStyle => TextStyle(
     fontSize: 60.sp,
     fontWeight: FontWeight.w700,

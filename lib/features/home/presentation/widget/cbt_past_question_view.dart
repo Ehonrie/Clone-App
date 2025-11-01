@@ -1,4 +1,5 @@
 import 'package:clone_app/core/config/extention.dart';
+import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -213,29 +214,29 @@ class _CbtPastQuestionViewState extends State<CbtPastQuestionView> {
           ],
         ),
       ),
-      bottomSheet: GestureDetector(
-        onTap: () {}, // 👈 disables when no selection
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20), // rounded card style
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 4.r,
-                offset: Offset(1, 1),
-                spreadRadius: 0.5.r,
-              ),
-            ],
-          ),
+      bottomSheet: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20), // rounded card style
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 4.r,
+              offset: Offset(1, 1),
+              spreadRadius: 0.5.r,
+            ),
+          ],
+        ),
+        child: GestureDetector(
+          onTap: () => Navigator.pushNamed(context, RoutesManager.cbtSubjectQuestionRoute),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
             width: double.infinity,
             height: 50,
             decoration: BoxDecoration(
               color: AppColors.primary,
-
+                
               borderRadius: BorderRadius.circular(15.r),
             ),
             child: Center(

@@ -10,6 +10,9 @@ import '../../features/home/presentation/pages/performance_details_view.dart';
 import '../../features/home/presentation/pages/performance_widget.dart';
 import '../../features/home/presentation/pages/study_mode_view.dart';
 import '../../features/home/presentation/pages/summary_note_view.dart';
+import '../../features/home/presentation/widget/cbt_subject_questions.dart';
+import '../../features/home/presentation/widget/flash_card_widget.dart';
+import '../../features/home/presentation/widget/subject_questions_view.dart';
 import '../../features/menu/presentation/pages/about_view.dart';
 import '../../features/menu/presentation/pages/bookmarked_view.dart';
 import '../../features/menu/presentation/pages/edit_profile_view.dart';
@@ -18,6 +21,7 @@ import '../../features/menu/presentation/pages/reset_password_view.dart';
 import '../../features/menu/presentation/pages/setting_view.dart';
 import '../../features/menu/presentation/pages/special_information_view.dart';
 import '../../features/menu/presentation/widgets/note_widget.dart';
+import '../../features/novel/presentation/pages/jamb_novel_view.dart';
 import '../../features/onboarding/presentation/pages/splash_view.dart';
 import 'manager.dart';
 
@@ -64,6 +68,15 @@ class RouteGenerator {
       case RoutesManager.noteRoute:
         return MaterialPageRoute(builder: (_) => NoteWidget());
 
+      case RoutesManager.subjectQuestionRoute:
+        return MaterialPageRoute(builder: (_) => SubjectQuestionsView()); //
+
+      case RoutesManager.cbtSubjectQuestionRoute:
+        return MaterialPageRoute(builder: (_) => CbtSubjectQuestions());
+
+      case RoutesManager.flashCardWidgetRoute:
+        return MaterialPageRoute(builder: (_) => FlashCardWidget());
+
       //menu
       case RoutesManager.resetPasswordRoute:
         return MaterialPageRoute(builder: (_) => ResetPasswordView());
@@ -85,6 +98,10 @@ class RouteGenerator {
 
       case RoutesManager.aboutRoute:
         return MaterialPageRoute(builder: (_) => AboutView());
+
+        //novel
+         case RoutesManager.novelRoute:
+        return MaterialPageRoute(builder: (_) => JambNovelView());
 
       default:
         return unDefinedRoute();

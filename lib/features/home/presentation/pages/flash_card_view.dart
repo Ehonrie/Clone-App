@@ -1,4 +1,5 @@
 import 'package:clone_app/core/config/extention.dart';
+import 'package:clone_app/core/routes/manager.dart';
 import 'package:clone_app/core/theme/text_extention.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,22 +36,82 @@ class _FlashCardViewState extends State<FlashCardView> {
               "SELECT ANY SUBJECT YOU WISH TO VIEW FROM",
               style: Theme.of(context).textTheme.myBodyStyle,
             ),
-             27.toColumnSizedBox(),
-            SubjectPreference(logo: "E", title: "ENGLISH LANGUAGE", onTap: () {  },),
+            27.toColumnSizedBox(),
+            SubjectPreference(
+              logo: "E",
+              title: "ENGLISH LANGUAGE",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
+            ),
             5.toColumnSizedBox(),
-            SubjectPreference(logo: "M", title: "MATHEMATICS", onTap: () {  },),
-            5.toColumnSizedBox(),
-            SubjectPreference(logo: "C", title: "CHEMISTRY", onTap: () {  },),
-            5.toColumnSizedBox(),
-            SubjectPreference(logo: "B", title: "BIOLOGY", onTap: () {  },),
-            5.toColumnSizedBox(),
-            SubjectPreference(logo: "P", title: "PHYSICS", onTap: () {  },),
-            5.toColumnSizedBox(),
-            SubjectPreference(logo: "A", title: "AGRICULTURAL SCIENCE", onTap: () {  },),
+            SubjectPreference(
+              logo: "M",
+              title: "MATHEMATICS",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
+            ),
             5.toColumnSizedBox(),
             SubjectPreference(
               logo: "C",
-              title: "CHRISTIAN RELIGIOUS KNOWLEDGE", onTap: () {  },
+              title: "CHEMISTRY",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
+            ),
+            5.toColumnSizedBox(),
+            SubjectPreference(
+              logo: "B",
+              title: "BIOLOGY",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
+            ),
+            5.toColumnSizedBox(),
+            SubjectPreference(
+              logo: "P",
+              title: "PHYSICS",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
+            ),
+            5.toColumnSizedBox(),
+            SubjectPreference(
+              logo: "A",
+              title: "AGRICULTURAL SCIENCE",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
+            ),
+            5.toColumnSizedBox(),
+            SubjectPreference(
+              logo: "C",
+              title: "CHRISTIAN RELIGIOUS KNOWLEDGE",
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  RoutesManager.flashCardWidgetRoute,
+                );
+              },
             ),
           ],
         ),

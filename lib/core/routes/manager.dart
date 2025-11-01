@@ -19,6 +19,9 @@ class RoutesManager {
   static const String cbtExamRoute = "/cbtExamRoute";
   static const String syllabusRoute = "/syllabusRoute";
   static const String noteRoute = "/noteRoute";
+  static const String subjectQuestionRoute = "/subjectQuestionRoute";
+  static const String cbtSubjectQuestionRoute = "/cbtSubjectQuestionRoute";
+  static const String flashCardWidgetRoute = "/flashCardWidgetRoute";
 
   //menu
   static const String resetPasswordRoute = "/resetPasswordRoute";
@@ -28,4 +31,8 @@ class RoutesManager {
   static const String bookmarkedRoute = "/bookmarkedRoute";
   static const String settingRoute = "/settingRoute";
   static const String aboutRoute = "/aboutRoute";
+
+  //novel
+  static const String novelRoute = "/novelRoute";
+
 }
